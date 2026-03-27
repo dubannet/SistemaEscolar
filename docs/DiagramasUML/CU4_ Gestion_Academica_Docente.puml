@@ -1,0 +1,53 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Docente" as D
+
+package "Módulo Docente - Académico" {
+  usecase "HU-D01: Subir materiales de estudio" as D01
+  usecase "HU-D02: Registrar asistencia e inasistencias" as D02
+  usecase "HU-D03: Crear tareas y exámenes" as D03
+  usecase "HU-D04: Clasificar evaluaciones por tipo" as D04
+  usecase "HU-D05: Asignar porcentaje a evaluaciones" as D05
+  usecase "HU-D06: Ver agenda de clases" as D06
+  usecase "HU-D08: Consultar rendimiento académico" as D08
+  usecase "HU-D14: Crear plantilla anual de evaluaciones" as D14
+  usecase "HU-D15: Exportar plantilla a CSV" as D15
+  usecase "HU-D16: Importar plantilla desde CSV" as D16
+  usecase "HU-D17: Reutilizar plantilla del año anterior" as D17
+}
+
+package "Módulo Docente - Administrativo" {
+  usecase "HU-D07: Generar reporte disciplinario" as D07
+  usecase "HU-D09: Solicitar certificado laboral" as D09
+  usecase "HU-D10: Solicitar permiso laboral" as D10
+  usecase "HU-D11: Justificar inasistencias" as D11
+  usecase "HU-D12: Solicitar cambio de salón" as D12
+  usecase "HU-D13: Solicitar reapertura de periodo" as D13
+}
+
+D --> D01
+D --> D02
+D --> D03
+D --> D04
+D --> D05
+D --> D06
+D --> D07
+D --> D08
+D --> D09
+D --> D10
+D --> D11
+D --> D12
+D --> D13
+D --> D14
+D --> D15
+D --> D16
+D --> D17
+
+D14 ..> D15 : <<extend>>
+D14 ..> D16 : <<extend>>
+D14 ..> D17 : <<include>>
+D03 ..> D04 : <<include>>
+D03 ..> D05 : <<include>>
+@enduml

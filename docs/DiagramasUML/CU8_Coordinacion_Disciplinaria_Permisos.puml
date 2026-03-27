@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Docente" as D
+actor "Coordinador" as C
+actor "Rector" as R
+
+package "Gestión de Permisos Docentes" {
+  usecase "HU-D10: Solicitar permiso laboral" as PM01
+  usecase "HU-C08: Aprobar/rechazar permiso (Coordinador)" as PM02
+  usecase "HU-R11: Aprobar permiso (Rector)" as PM03
+  usecase "HU-C09: Asignar docente sustituto" as PM04
+}
+
+D --> PM01
+C --> PM02
+R --> PM03
+
+PM01 ..> PM02 : <<include>>
+PM02 ..> PM03 : <<include>>
+PM02 ..> PM04 : <<extend>>
+@enduml

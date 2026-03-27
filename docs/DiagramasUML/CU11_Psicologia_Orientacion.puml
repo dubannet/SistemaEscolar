@@ -1,0 +1,30 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Estudiante" as E
+actor "Psicólogo" as P
+
+package "Módulo Psicológico" {
+  usecase "HU-E12: Solicitar cita psicológica" as PS01
+  usecase "Recibir solicitud de cita" as PS02
+  usecase "Agendar cita psicológica" as PS03
+  usecase "Crear cita proactivamente" as PS04
+  usecase "Registrar diagnóstico y observaciones" as PS05
+  usecase "Registrar seguimiento psicológico" as PS06
+  usecase "Mantener historial psicológico" as PS07
+}
+
+E --> PS01
+P --> PS02
+P --> PS03
+P --> PS04
+P --> PS05
+P --> PS06
+P --> PS07
+
+PS01 ..> PS02 : <<include>>
+PS02 ..> PS03 : <<include>>
+PS05 ..> PS07 : <<include>>
+PS06 ..> PS07 : <<include>>
+@enduml

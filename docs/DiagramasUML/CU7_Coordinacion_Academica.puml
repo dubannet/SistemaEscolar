@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Coordinador" as C
+
+package "Módulo Coordinador - Académico" {
+  usecase "HU-C01: Crear grupos académicos" as C01
+  usecase "HU-C02: Asignar docentes a cursos" as C02
+  usecase "HU-C03: Asignar director de grupo" as C03
+  usecase "HU-C04: Supervisar carga de notas" as C04
+  usecase "HU-C11: Crear y editar malla curricular" as C11
+  usecase "HU-C12: Definir intensidad horaria semanal" as C12
+}
+
+package "Módulo Coordinador - Disciplina y RRHH" {
+  usecase "HU-C05: Gestionar reportes disciplinarios" as C05
+  usecase "HU-C06: Registrar historial de convivencia" as C06
+  usecase "HU-C07: Ver reportes disciplinarios por periodo" as C07
+  usecase "HU-C08: Aprobar/rechazar permisos docentes" as C08
+  usecase "HU-C09: Asignar docentes sustitutos" as C09
+  usecase "HU-C10: Aprobar cambios de salón" as C10
+}
+
+C --> C01
+C --> C02
+C --> C03
+C --> C04
+C --> C05
+C --> C06
+C --> C07
+C --> C08
+C --> C09
+C --> C10
+C --> C11
+C --> C12
+
+C01 ..> C02 : <<include>>
+C01 ..> C03 : <<include>>
+C11 ..> C12 : <<include>>
+C05 ..> C06 : <<include>>
+@enduml

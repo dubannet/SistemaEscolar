@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Rector" as R
+
+package "Módulo Rector - Configuración" {
+  usecase "HU-R01: Crear materias por áreas obligatorias" as R01
+  usecase "HU-R02: Aprobar malla curricular" as R02
+  usecase "HU-R03: Configurar año académico" as R03
+  usecase "HU-R04: Importar configuración de años anteriores" as R04
+  usecase "HU-R07: Definir calendario académico y PEI" as R07
+}
+
+package "Módulo Rector - Gestión" {
+  usecase "HU-R05: Gestionar planta docente" as R05
+  usecase "HU-R06: Visualizar indicadores académicos" as R06
+  usecase "HU-R08: Aprobar documentos oficiales" as R08
+  usecase "HU-R09: Aprobar retiro de estudiantes" as R09
+  usecase "HU-R10: Visualizar información financiera" as R10
+  usecase "HU-R11: Aprobar permisos docentes" as R11
+}
+
+R --> R01
+R --> R02
+R --> R03
+R --> R04
+R --> R05
+R --> R06
+R --> R07
+R --> R08
+R --> R09
+R --> R10
+R --> R11
+
+R03 ..> R04 : <<extend>>
+R02 ..> R01 : <<include>>
+@enduml

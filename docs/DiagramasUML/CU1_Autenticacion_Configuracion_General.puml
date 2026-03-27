@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Usuario" as U
+
+package "Autenticación y Perfil" {
+  usecase "HU-G01: Iniciar sesión" as G01
+  usecase "HU-G02: Editar datos personales" as G02
+  usecase "HU-G03: Cambiar modo claro/oscuro" as G03
+  usecase "HU-G04: Ver notificaciones" as G04
+  usecase "HU-G05: Mensajería interna" as G05
+}
+
+U --> G01
+U --> G02
+U --> G03
+U --> G04
+U --> G05
+@enduml

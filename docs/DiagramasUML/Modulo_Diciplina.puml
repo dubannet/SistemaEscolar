@@ -1,0 +1,29 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Docente" as D
+actor "Estudiante" as E
+actor "Coordinador" as C
+
+package "Módulo Disciplina" {
+  usecase "HU-D07: Reportar incidente disciplinario" as DC01
+  usecase "HU-E10: Reportar incidente (estudiante)" as DC02
+  usecase "HU-E13: Reportar queja sobre docente" as DC03
+  usecase "HU-C05: Gestionar reporte disciplinario" as DC04
+  usecase "HU-C06: Registrar historial de convivencia" as DC05
+  usecase "HU-C07: Ver reportes por periodo" as DC06
+}
+
+D --> DC01
+E --> DC02
+E --> DC03
+C --> DC04
+C --> DC05
+C --> DC06
+
+DC01 ..> DC04 : <<include>>
+DC02 ..> DC04 : <<include>>
+DC03 ..> DC04 : <<include>>
+DC04 ..> DC05 : <<include>>
+@enduml

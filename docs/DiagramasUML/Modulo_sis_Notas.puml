@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Docente" as D
+actor "Administrador" as A
+
+package "Sistema de Notas" {
+  usecase "Registrar nota de evaluación" as N01
+  usecase "Calcular nota final del periodo" as N02
+  usecase "Cerrar periodo académico" as N03
+  usecase "HU-D13: Solicitar reapertura de periodo" as N04
+  usecase "Habilitar reapertura temporal" as N05
+}
+
+D --> N01
+D --> N04
+A --> N05
+
+N01 ..> N02 : <<include>>
+N03 ..> N01 : <<extend>>
+N04 ..> N05 : <<include>>
+@enduml

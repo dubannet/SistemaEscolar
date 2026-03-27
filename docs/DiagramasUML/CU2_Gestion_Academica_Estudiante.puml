@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Estudiante" as E
+
+package "Módulo Estudiante" {
+  usecase "HU-E01: Consultar notas por materia y periodo" as E01
+  usecase "HU-E02: Ver estadísticas académicas" as E02
+  usecase "HU-E03: Consultar asistencias" as E03
+  usecase "HU-E04: Ver tareas asignadas" as E04
+  usecase "HU-E05: Subir tareas" as E05
+  usecase "HU-E06: Acceder a materiales de estudio" as E06
+  usecase "HU-E07: Ver cursos asignados" as E07
+  usecase "HU-E08: Consultar horario de clases" as E08
+  usecase "HU-E09: Reportar problemas con notas" as E09
+  usecase "HU-E10: Reportar incidentes disciplinarios" as E10
+  usecase "HU-E11: Justificar inasistencias" as E11
+  usecase "HU-E12: Solicitar cita psicológica" as E12
+  usecase "HU-E13: Reportar quejas sobre docentes" as E13
+}
+
+E --> E01
+E --> E02
+E --> E03
+E --> E04
+E --> E05
+E --> E06
+E --> E07
+E --> E08
+E --> E09
+E --> E10
+E --> E11
+E --> E12
+E --> E13
+@enduml
