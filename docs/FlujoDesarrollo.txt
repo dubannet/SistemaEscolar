@@ -1,3 +1,6 @@
 Link al documento online de como va a ser el flujo de desarrollo, es decir; en que carpeta va cada cosa 
 y explica cual es el proposito de cada carpeta
 https://docs.google.com/document/d/1nwAFA4szDwAG76PXbI11_QJ-oX0V6D4SiELP-n75Gs4/edit?usp=sharing
+
+Backlog de cosas Por hacer
+https://docs.google.com/document/d/1zu7eszPp6RcD51lSakVtH_Dz8pFkU5wmM7bMNQq4xqA/edit?usp=sharing
